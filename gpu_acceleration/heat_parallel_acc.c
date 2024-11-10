@@ -72,7 +72,8 @@ int main() {
     }
 
     // Main iteration loop
-    #pragma acc data copyin(u[0:NX][0:NY]) copyout(u_new[0:NX][0:NY]) // Copy data to GPU for eaiser access
+
+    #pragma acc data copy(u_local[0 : (row_chunks + 2) * NY]) copyin(u_new_local[0 : (row_chunks + 2) * NY])
     for (iter = 0; iter < MAX_ITER; iter++) {
         // Halo exchange
         if (rank > 0) {
@@ -87,7 +88,7 @@ int main() {
         // Compute new values using OpenACC (excluding boundary rows)
         max_diff = 0.0;
         // loop collapse is used to parallelize both loops at the same time on the GPU
-        #pragma acc parallel loop collapse(2) private(i, j, diff) reduction(max:max_diff)
+        #pragma acc parallel loop collapse(2) reduction(max : max_diff)
         for (i = 1; i <= row_chunks; i++) {
             for (j = 1; j < NY - 1; j++) {
                 if (rank == 0 && i == 1) {
