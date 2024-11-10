@@ -192,7 +192,7 @@ $$ S = \frac{T_{\text{serial}}}{T_{\text{parallel}}} $$
 
 Using the assumed times:
 
-\[ S = \frac{0.0089}{0.0042} \approx 2.1 \]
+$$ S = \frac{0.0089}{0.0042} \approx 2.1 $$
 
 
 ### Discussion
