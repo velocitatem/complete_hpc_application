@@ -26,3 +26,9 @@ For example, to run the code with 12 processes, use:
 ```sh
 mpirun -np 12 ./heat_parallel
 ```
+
+
+// you can compare with the following commands or the notebook given
+[velocitatem@omen complete_hpc_application]$ mpirun -np 5 heat_parallel >> parallel.out
+[velocitatem@omen complete_hpc_application]$ ./serial >> serial.out
+[velocitatem@omen complete_hpc_application]$ diff serial.out parallel.out
