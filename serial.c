@@ -1,16 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
-#define NX 500
-#define NY 500
-#define MAX_ITER 1000
+#define NX 100
+#define NY 100
+#define MAX_ITER 100
 #define TOLERANCE 1e-6
 
 int main() {
    double u[NX][NY], u_new[NX][NY];
    int i, j, iter;
    double diff, max_diff;
+
+   double start_time = clock();
 
    // Initialize the grid
    for (i = 0; i < NX; i++) {
@@ -51,9 +54,13 @@ int main() {
        }
    }
 
+   double end_time = clock();
+   double elapsed_time = (end_time - start_time) / CLOCKS_PER_SEC;
+   printf("Elapsed time: %f seconds\n", elapsed_time);
+
    for (i = 0; i < NX; i++) {
       for (j = 0; j < NY; j++) {
-          printf("%f ", u[i][j]);
+          printf("%6.2f ", u[i][j]);
       }
       printf("\n");
    }
