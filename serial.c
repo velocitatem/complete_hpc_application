@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define NX 10
-#define NY 10
-#define MAX_ITER 3
+#define NX 100
+#define NY 100
+#define MAX_ITER 100
 #define TOLERANCE 1e-6
 
 int main() {
