@@ -69,15 +69,11 @@ To harness the computational power of GPUs, I transitioned the code from using O
 - **GPU-accelerated Execution Time (with 2 processes, each using a GPU)**: ~0.002742 seconds
 
 ### Speedup Calculation:
+1. Speedup of CPU-only Parallel Version over Serial. S_CPU = T_serial / T_CPU_parallel = 0.0089 / 0.0042 ≈ 2.1
 
-1. **Speedup of CPU-only Parallel Version over Serial**:
-   $$ S_{\text{CPU}} = \frac{T_{\text{serial}}}{T_{\text{CPU\_parallel}}} = \frac{0.0089}{0.0042} \approx 2.1 $$
+2. Speedup of GPU-accelerated Version over Serial: S_GPU = T_serial / T_GPU_parallel = 0.0089 / 0.002742 ≈ 3.25
 
-2. **Speedup of GPU-accelerated Version over Serial**:
-   $$ S_{\text{GPU}} = \frac{T_{\text{serial}}}{T_{\text{GPU\_parallel}}} = \frac{0.0089}{0.002742} \approx 3.25 $$
-
-3. **Speedup of GPU-accelerated Version over CPU-only Parallel Version**:
-   $$ S_{\text{GPU\_over\_CPU}} = \frac{T_{\text{CPU\_parallel}}}{T_{\text{GPU\_parallel}}} = \frac{0.0042}{0.002742} \approx 1.53 $$
+3. Speedup of GPU-accelerated Version over CPU-only Parallel Version: S_GPU_over_CPU = T_CPU_parallel / T_GPU_parallel = 0.0042 / 0.002742 ≈ 1.53
 
 ### Observations:
 
