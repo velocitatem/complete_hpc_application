@@ -188,7 +188,7 @@ Assuming:
 
 The speedup `S` is calculated as:
 
-\[ S = \frac{T_{\text{serial}}}{T_{\text{parallel}}} \]
+$$ S = \frac{T_{\text{serial}}}{T_{\text{parallel}}} $$
 
 Using the assumed times:
 
