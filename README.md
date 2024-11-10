@@ -81,9 +81,9 @@ diff serial.out parallel.out
 To compile the code with OpenACC support, use the following commands:
 
 ```sh
-module load gcc/9.3.0
-module load openmpi/4.0.3
-module load cuda/11.2
+module load gcc
+module load openmpi
+module load nvhpc
 mpicc -o heat_parallel_acc gpu_acceleration/heat_parallel_acc.c -fopenmp -fopenacc
 ```
 
