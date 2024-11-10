@@ -75,3 +75,28 @@ diff serial.out parallel.out
 
 
 ## GPUs
+
+### Compilation with OpenACC
+
+To compile the code with OpenACC support, use the following commands:
+
+```sh
+module load gcc
+module load openmpi
+module load nvhpc
+mpicc -o heat_parallel_acc gpu_acceleration/heat_parallel_acc.c -fopenmp -fopenacc
+```
+
+### Running the Code with GPU Acceleration
+
+To run the code with GPU acceleration, use the following command:
+
+```sh
+mpirun -np <number_of_processes> ./heat_parallel_acc
+```
+
+For example, to run the code with 2 processes, use:
+
+```sh
+mpirun -np 2 ./heat_parallel_acc
+```
