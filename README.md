@@ -1,4 +1,4 @@
-# complete_hpc_application
+# 2D Lapace Heat Equation Solver
 
 ## Purpose of the Project
 
@@ -70,7 +70,8 @@ mpirun -np 5 heat_parallel >> parallel.out
 diff serial.out parallel.out
 ```
 
-The time it took for the MPI and OpenMP code to run is ~2.1 times faster when running on 5 or more compute nodes with CPUs.
+> [!NOTE]
+> The time it took for the MPI and OpenMP code to run is ~2.1 times faster when running on 5 or more compute nodes with CPUs.
 
 
 ## GPUs
