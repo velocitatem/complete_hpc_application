@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <time.h>
 
 #define NX 100
 #define NY 100
@@ -11,6 +12,8 @@ int main() {
    double u[NX][NY], u_new[NX][NY];
    int i, j, iter;
    double diff, max_diff;
+
+   double start_time = clock();
 
    // Initialize the grid
    for (i = 0; i < NX; i++) {
@@ -50,6 +53,10 @@ int main() {
            break;
        }
    }
+
+   double end_time = clock();
+   double elapsed_time = (end_time - start_time) / CLOCKS_PER_SEC;
+   printf("Elapsed time: %f seconds\n", elapsed_time);
 
    for (i = 0; i < NX; i++) {
       for (j = 0; j < NY; j++) {

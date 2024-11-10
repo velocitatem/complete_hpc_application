@@ -69,3 +69,8 @@ mpirun -np 5 heat_parallel >> parallel.out
 ./serial >> serial.out
 diff serial.out parallel.out
 ```
+
+The time it took for the MPI and OpenMP code to run is ~2.1 times faster when running on 5 or more compute nodes with CPUs.
+
+
+## GPUs

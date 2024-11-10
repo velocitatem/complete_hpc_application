@@ -4,7 +4,7 @@
 
 #SBATCH --job-name=heat_parallel  # Job name
 #SBATCH --partition=cpubase_bycore_b1  # Partition name
-#SBATCH --nodes=3  # Number of nodes
+#SBATCH --nodes=5  # Number of nodes
 #SBATCH --ntasks-per-node=4  # Number of tasks per node
 #SBATCH --cpus-per-task=1  # Number of CPUs per task
 #SBATCH --time=00:30:00  # Time limit

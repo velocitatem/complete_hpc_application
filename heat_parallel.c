@@ -20,6 +20,8 @@ int main() {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
 
+    double start_time = MPI_Wtime();
+
     if (NX % size != 0) {
         if (rank == 0) {
             printf("NX must be divisible by the number of processes.\n");
@@ -134,6 +136,11 @@ int main() {
 
     // Gather the grid data back to rank 0
     MPI_Gather(&u_local[NY], row_chunks * NY, MPI_DOUBLE, &u[0][0], row_chunks * NY, MPI_DOUBLE, 0, MPI_COMM_WORLD);
+
+    double end_time = MPI_Wtime();
+    if (rank == 0) {
+        printf("Execution time: %f seconds\n", end_time - start_time);
+    }
 
     if (rank == 0) {
         // Print the final grid
