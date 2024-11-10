@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define NX 500
-#define NY 500
-#define MAX_ITER 1000
+#define NX 10
+#define NY 10
+#define MAX_ITER 3
 #define TOLERANCE 1e-6
 
 int main() {
@@ -53,7 +53,7 @@ int main() {
 
    for (i = 0; i < NX; i++) {
       for (j = 0; j < NY; j++) {
-          printf("%f ", u[i][j]);
+          printf("%6.2f ", u[i][j]);
       }
       printf("\n");
    }
