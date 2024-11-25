@@ -33,7 +33,7 @@ First step was to create the VTK file from the serial implementation of our prog
 The program reads a scalar field defined over a 2D grid from a VTK file and visualizes it. The program then captures this visualization as an image and saves it to a file named `serial.png`.
 
 
-![](../output.png)
+![](../serial.png)
 
 
 **Summary:**
