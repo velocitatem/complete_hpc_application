@@ -65,5 +65,29 @@ int main() {
       printf("\n");
    }
 
+
+   // VTK visualizer write to file
+   FILE *fp = fopen("serial.vtk", "w");
+   fprintf(fp, "# vtk DataFile Version 3.0\n");
+   fprintf(fp, "vtk output\n");
+   fprintf(fp, "ASCII\n");
+   fprintf(fp, "DATASET STRUCTURED_POINTS\n");
+   fprintf(fp, "DIMENSIONS %d %d 1\n", NX, NY);
+   fprintf(fp, "ORIGIN 0 0 0\n");
+   fprintf(fp, "SPACING 1 1 1\n");
+   fprintf(fp, "POINT_DATA %d\n", NX * NY);
+   fprintf(fp, "SCALARS u float 1\n");
+   fprintf(fp, "LOOKUP_TABLE default\n");
+
+   for (i = 0; i < NX; i++) {
+       for (j = 0; j < NY; j++) {
+           fprintf(fp, "%f\n", u[i][j]);
+       }
+   }
+
+   fclose(fp);
+
+
+
    return 0;
 }
